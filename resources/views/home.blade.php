@@ -26,7 +26,7 @@
 
                 @if (auth()->user()->image)
                 <div>
-                    <img src="{{ asset('images/'.Auth::user()->image) }}" alt="" srcset="">
+                    <img width="300" height="300" src="{{ asset('images/'.Auth::user()->image) }}" alt="" srcset="">
                 </div>
                 @endif
 

@@ -1,0 +1,32 @@
+for fixing the bootstrap different size image thumbnail problem
+.row.fix {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+h1 {
+    font-family: FontAwesome;
+}
+
+/* body {
+     padding-top: 70px;
+} */
+
+.jumbotron {
+    color: #2c3e50;
+    background: lightgray;
+}
+
+.navbar-inverse {
+    background: #2c3e50;
+}
+
+/*using it for NavBar options Clolor change*/
+.navbar-inverse .navbar-nav>li>a {
+    color: white;
+}
+
+/*for brand and icon*/
+.navbar-inverse .navbar-brand {
+    color: #ffffff;
+}
