@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\Auth;
 // use App\Http\Controllers\User;
 use Illuminate\Validation\ValidationException;
 
-// use App\Http\Controllers\Auth;
 
 class LoginController extends Controller
 {
@@ -52,7 +51,6 @@ class LoginController extends Controller
      * @param \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      *
-     * @use  \Illuminate\Validation\ValidationException;
      * @use  \Illuminate\Support\Facades\Auth;
      * @use  App\User;
      */

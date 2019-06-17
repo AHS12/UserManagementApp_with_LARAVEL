@@ -24,7 +24,13 @@
                 </div>
                 @endif
 
-                <b>Name:</b> {{ Auth::user()->name }} <br>
+                @if (auth()->user()->image)
+                <div>
+                    <img src="{{ asset('images/'.Auth::user()->image) }}" alt="" srcset="">
+                </div>
+                @endif
+
+                <b>Name:</b> {{ Auth::user()->name }}<br>
                 <b>Email:</b> {{auth()->user()->email}} <br>
                 <b>Birth Date:</b> {{Auth::user()->birthDate}}
 

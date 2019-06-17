@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <link href="{{ asset('css/helper.css') }}" rel="stylesheet">
+    {{-- <link href="{{ asset('css/helper.css') }}" rel="stylesheet"> --}}
 
 
 
@@ -100,7 +100,7 @@
     <footer class="footer mt-auto py-3 fixed-bottom text-center">
         <div class="container">
             <span class="text-muted">UserManagementApp All right Preserved.
-                <a href="https://github.com/AHS12/ProjectManagementApp" target="_blank">Sourec Code is here</a>
+                <a href="https://github.com/AHS12/UserManagementApp" target="_blank">Sourec Code is here</a>
             </span>
         </div>
     </footer>

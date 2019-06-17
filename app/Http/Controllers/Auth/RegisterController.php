@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
 use App\Http\Controllers\Controller;
+use App\Http\Requests;
+use App\User;
+use Carbon\Carbon;
+use Illuminate\Auth\Events\Registered;
+use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Foundation\Auth\RegistersUsers;
-use Carbon\Carbon;
 
 class RegisterController extends Controller
 {
@@ -20,7 +23,7 @@ class RegisterController extends Controller
     | validation and creation. By default this controller uses a trait to
     | provide this functionality without requiring any additional code.
     |
-    */
+     */
 
     use RegistersUsers;
 
@@ -29,7 +32,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/login';
 
     /**
      * Create a new controller instance.
@@ -53,27 +56,65 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'birthDate' => ['required','date'],
+            'birthDate' => ['required', 'date'],
+            'image' => ['required', 'image', 'max:2048'],
         ]);
+    }
+
+    /**
+     * pick up the image file and process it
+     *
+     * @param  App\Http\Requests;
+     * @return image file Name
+     */
+
+    public function getUserImage(Request $request)
+    {
+        $image = $request->file('image');
+        $processedImg = time() . rand() . '.' . $image->getClientOriginalExtension();
+        $image->move(public_path('images'), $processedImg);
+        return $processedImg;
+
     }
 
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param
      * @return \App\User
      */
+
     protected function create(array $data)
     {
+        $request = request();
+        $image = $request->file('image');
+        $extension = $image->getClientOriginalExtension();
+        $processedImg = time() . rand() . '.' . $extension;
+        $image->move(public_path('images'), $processedImg);
+
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
             'birthDate' => Carbon::parse($data['birthDate']),
+            'image' => $processedImg,
         ]);
 
-        flashMsg('Your Account Has Been Created!!');
 
         return $user;
+    }
+
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
+
+        event(new Registered($user = $this->create($request->all())));
+
+        // $this->guard()->login($user);
+
+        $request->session()->flash('message', 'Registration Successful');
+
+        return $this->registered($request, $user)
+        ?: redirect($this->redirectPath());
     }
 }

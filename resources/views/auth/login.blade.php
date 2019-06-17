@@ -8,8 +8,19 @@
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
+
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
+
+                        @if (session('message'))
+                        <div class="alert alert-success alert-dismissible fade show" id="alert" role="alert">
+                            <p>{{session('message')}}</p>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        @endif
+                        
 
                         <div class="form-group row">
                             <label for="email"
