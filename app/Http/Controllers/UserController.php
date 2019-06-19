@@ -16,7 +16,7 @@ class UserController extends Controller
     {
         //fatching all user
         $users = User::all();
-        return view('welcome',compact('users'));
+        return view('/users/index',compact('users'));
     }
 
     /**

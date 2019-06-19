@@ -52,7 +52,7 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
                     <li class="nav-item">
-                        <a class="nav-link" href="*">Users</a>
+                        <a class="nav-link" href="/users">Users</a>
                     </li>
                 </ul>
 

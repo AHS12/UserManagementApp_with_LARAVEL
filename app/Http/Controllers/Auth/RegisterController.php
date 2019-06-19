@@ -11,6 +11,8 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use App\Jobs;
+use App\Jobs\UserCreatedMailJob;
 
 class RegisterController extends Controller
 {
@@ -110,9 +112,11 @@ class RegisterController extends Controller
 
         event(new Registered($user = $this->create($request->all())));
 
+        //responsible for auto login after register
         // $this->guard()->login($user);
 
         $request->session()->flash('message', 'Registration Successful');
+        dispatch( new UserCreatedMailJob($user));
 
         return $this->registered($request, $user)
         ?: redirect($this->redirectPath());

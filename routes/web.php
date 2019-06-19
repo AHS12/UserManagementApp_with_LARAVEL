@@ -12,7 +12,7 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', 'UserController@index');
+Route::get('/', 'WelcomeController@index');
 
 Auth::routes();
 

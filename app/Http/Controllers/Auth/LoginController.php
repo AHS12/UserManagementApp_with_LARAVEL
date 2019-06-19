@@ -115,6 +115,7 @@ class LoginController extends Controller
         $this->guard()->logout();
         $request->session()->flush();
         $request->session()->regenerate();
+        flashMsg('Succrssfully logged out!');
         return redirect('/login');
     }
 
