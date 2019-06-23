@@ -11,7 +11,7 @@
 </div>
 @endif
 
-<b>Projects</b>
+<b>Users</b>
 <table id="datatable" class="table table-sm table-hover table-bordered" cellspacing="0" width="100%">
     <thead>
         <tr>

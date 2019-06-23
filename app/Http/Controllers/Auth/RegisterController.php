@@ -115,6 +115,8 @@ class RegisterController extends Controller
         //responsible for auto login after register
         // $this->guard()->login($user);
 
+        $user->roles()->attach(2);
+
         $request->session()->flash('message', 'Registration Successful');
         dispatch( new UserCreatedMailJob($user));
 

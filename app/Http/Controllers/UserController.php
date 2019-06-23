@@ -14,6 +14,14 @@ class UserController extends Controller
      */
     public function index()
     {
+    //     $user = User::find(1);
+    //     // dd($user->roles()->name);
+    //     // $user->roles()->detach(2);
+    //    // $user->roles()->attach(2);
+    //     // $user->roles()->sync(1);
+    //     foreach($user->roles as $role){
+    //         dd($role->name);
+    //     }
         //fatching all user
         $users = User::all();
         return view('/users/index',compact('users'));
