@@ -4,7 +4,7 @@
 Your Account Have been Created Successfully!
 Click The Button to check your profile.
 
-@component('mail::button', ['url' => url('http://127.0.0.1:8000/home')])
+@component('mail::button', ['url' => url('http://user.test/home')])
 Check Profile
 @endcomponent
 

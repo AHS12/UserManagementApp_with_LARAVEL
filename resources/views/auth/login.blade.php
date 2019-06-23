@@ -20,7 +20,7 @@
                             </button>
                         </div>
                         @endif
-                        
+
 
                         <div class="form-group row">
                             <label for="email"
@@ -81,13 +81,26 @@
                                 @endif
                             </div>
                         </div>
-                            <br>
+                        <br>
                         <div class="form-group row">
                             <div class="col-md-6 offset-md-4">
                                 @include('errors')
                             </div>
                         </div>
                     </form>
+                    <div class="col-sm-4 social-buttons">
+                        <h3>Social Login</h3>
+                        <a class="btn btn-block btn-social btn-facebook">
+                            <i class="fa fa-facebook"></i> Sign in with Facebook
+                        </a>
+                        <a class="btn btn-block btn-social btn-github">
+                            <i class="fa fa-github"></i> Sign in with GitHub
+                        </a>
+                        <a class="btn btn-block btn-social btn-google-plus">
+                            <i class="fa fa-google-plus"></i> Sign in with Google
+                        </a>
+                    </div>
+
                 </div>
             </div>
         </div>
