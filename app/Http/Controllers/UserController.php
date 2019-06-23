@@ -70,6 +70,7 @@ class UserController extends Controller
     public function edit(User $user)
     {
         //
+
     }
 
     /**

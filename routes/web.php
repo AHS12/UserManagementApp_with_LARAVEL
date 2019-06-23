@@ -1,6 +1,7 @@
 <?php
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\AdminTaskController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,5 +21,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('users', 'UserController');
-Route::get('/admin', 'AdminController@index');
+Route::get('/admin', 'AdminController@index')->name('admin');
 Route::get('/forbidden','PagesController@index')->name('forbidden');
+Route::post('updateUser-admin/{user}','AdminTaskController@makeAdmin');
+Route::post('updateUser-user/{user}','AdminTaskController@makeUser');
+Route::post('demote-user/{user}','AdminTaskController@DemoteToUser');

@@ -17,7 +17,7 @@ class IsAdmin
     {
         if ($request->user() === null) {
             # code...
-            return response("You Dont Have Permission To View This Page",401);
+            return redirect()->route('login');
         }
 
         if($request->user()->hasRole('administrator')){

@@ -19,6 +19,7 @@
             <th scope="col">Birthdate</th>
             <th scope="col">Role</th>
             <th scope="col">Badge</th>
+            <th scope="col">Action</th>
         </tr>
     </thead>
     <tbody>
@@ -59,6 +60,27 @@
                     <p><i class="fas fa-users"></i></p>
                     @else
                     <i class="fas fa-user-lock"></i>
+                    @endif
+                </td>
+                <td>
+                    {{-- <button class="btn btn-circle btn-facebook">edit</button> --}}
+                    @if ($user->hasrole('administrator'))
+                    <form action="demote-user/{{$user->id}}" method="POST">
+                        {{ csrf_field() }}
+                        <button type="submit" class="btn btn-outline-success">Make User(Demote)</button>
+                    </form>
+
+                    @elseif ($user->hasrole('user'))
+                    <form action="updateUser-admin/{{$user->id}}" method="POST">
+                        {{ csrf_field() }}
+                        <button type="submit" class="btn btn-outline-danger">Make Admin</button>
+                    </form>
+
+                    @else
+                    <form action="updateUser-user/{{$user->id}}" method="POST">
+                        {{ csrf_field() }}
+                        <button type="submit" class="btn btn-outline-success">Make User</button>
+                    </form>
                     @endif
                 </td>
             </tr>
