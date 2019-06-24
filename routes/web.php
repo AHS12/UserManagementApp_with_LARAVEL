@@ -2,6 +2,7 @@
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\AdminTaskController;
+use App\Http\Controllers\ImageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,4 @@ Route::get('/forbidden','PagesController@index')->name('forbidden');
 Route::post('updateUser-admin/{user}','AdminTaskController@makeAdmin');
 Route::post('updateUser-user/{user}','AdminTaskController@makeUser');
 Route::post('demote-user/{user}','AdminTaskController@DemoteToUser');
+Route::patch('update-image/{user}','ImageController@updateUserImg');
