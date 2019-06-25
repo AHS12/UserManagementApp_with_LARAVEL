@@ -52,8 +52,14 @@ This Laravel Project Contains some medium level laravel functionality.
 ## Freamworks and Tools
 
 -[Boostrap4](https://getbootstrap.com/)
+
 -[Bootstrap 4 - Tempus Dominus](https://tempusdominus.github.io/bootstrap-4/)
+
 -[DataTables](https://datatables.net/)
+
 -[SB Admin 2](https://startbootstrap.com/themes/sb-admin-2/)
+
 -[Laravel](https://laravel.com/)
+
 -[Laravel Telescope](https://laravel.com/docs/5.8/telescope)
+
