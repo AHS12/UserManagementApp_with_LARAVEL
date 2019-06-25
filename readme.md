@@ -39,17 +39,17 @@ This Laravel Project Contains some medium level laravel functionality.
 - Used Custom Admin middleware for admins
 
 
-##Flash Message
+## Flash Message
 
 -Showing Sitewise Different Flash Message
 
 
-##CRUD
+## CRUD
 
 - A lot of CRUD using Route Model Binding
 
 
-##Freamworks and Tools
+## Freamworks and Tools
 
 -[Boostrap4](https://getbootstrap.com/)
 -[Bootstrap 4 - Tempus Dominus](https://tempusdominus.github.io/bootstrap-4/)
