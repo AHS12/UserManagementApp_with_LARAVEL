@@ -15,6 +15,7 @@
 <table id="dataTable" class="table table-sm table-hover table-bordered" cellspacing="0" width="100%">
     <thead>
         <tr>
+            <th>#</th>
             <th scope="col">Title</th>
             <th scope="col">body</th>
             <th scope="col">Sent To</th>
@@ -27,6 +28,7 @@
         <ul>
             <tr>
                 @foreach ($emails as $email)
+                <td>{{ $loop->iteration }}</td>
                 <th>
                     <div>
                         <p>{{$email->title}}</p>

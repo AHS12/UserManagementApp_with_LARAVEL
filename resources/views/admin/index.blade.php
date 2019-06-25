@@ -13,6 +13,7 @@
 <table id="dataTable" class="table table-sm table-hover table-bordered" cellspacing="0" width="100%">
     <thead>
         <tr>
+            <th>#</th>
             <th scope="col">Picture</th>
             <th scope="col">Name</th>
             <th scope="col">Email</th>
@@ -27,6 +28,7 @@
         <ul>
             <tr>
                 @foreach ($users as $user)
+                <td>{{ $loop->iteration }}</td>
                 <th>
                     <div><img height="100" width="100" src="{{ asset('/images/'.$user->image) }}" alt="no pic"
                             srcset="">

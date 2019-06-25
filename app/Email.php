@@ -19,6 +19,6 @@ class Email extends Model
     //lets try admin..nice working for 'admin_id'
     public function admin()
     {
-        return $this->belongsTo(USER::class, 'admin_id');
+        return $this->belongsTo(User::class, 'admin_id');
     }
 }
