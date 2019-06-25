@@ -28,3 +28,4 @@ Route::post('updateUser-admin/{user}','AdminTaskController@makeAdmin');
 Route::post('updateUser-user/{user}','AdminTaskController@makeUser');
 Route::post('demote-user/{user}','AdminTaskController@DemoteToUser');
 Route::patch('update-image/{user}','ImageController@updateUserImg');
+Route::resource('emails', 'EmailController');
