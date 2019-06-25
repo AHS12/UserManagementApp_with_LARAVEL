@@ -58,11 +58,16 @@
                     <div>
                         <p>
                             {{-- Snice i didnt use forign key as admin_id --}}
-                            @php
+                            {{-- @php
                             $admin = App\User::findOrFail($email->admin_id);
                             @endphp
                             {{$admin->name}} <br>
-                            {{$admin->email}}
+                            {{$admin->email}} --}}
+
+                            {{-- now i did :D --}}
+
+                            {{$email->admin->name}} <br>
+                            {{$email->admin->email}}
                         </p>
                     </div>
                 </td>
