@@ -36,9 +36,9 @@
 
 
 
-                <div class="col-md-4">
+                <div class="col-md-3">
                    <div class="card mb-4">
-                      <img class="card-img-top" width="200" height="350"
+                      <img class="card-img-top" width="200" height="250"
                       src="{{ asset('images/'.$user->image) }}" alt="Card image cap">
                       <div class="card-body">
                          <h5 class="card-title">{{$user->name}}</h5>

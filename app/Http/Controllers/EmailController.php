@@ -21,7 +21,8 @@ class EmailController extends Controller
     public function index()
     {
         //
-        return view('/emails/history');
+        $emails = Email::orderBy('created_at', 'desc')->get();
+        return view('/emails/history',compact('emails'));
     }
 
     /**
