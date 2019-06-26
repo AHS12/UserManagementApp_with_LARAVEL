@@ -50,11 +50,14 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/users">Users</a>
                     </li>
+                    @if (Auth::check())
                     @if (Auth::user()->hasRole('administrator'))
                     <li class="nav-item">
                             <a class="nav-link" href="/admin">Admin Pannel</a>
                         </li>
                     @endif
+                    @endif
+
                 </ul>
 
                 <!-- Right Side Of Navbar -->

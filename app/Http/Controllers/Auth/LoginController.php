@@ -7,9 +7,9 @@ use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-// use App\Http\Controllers\User;
-use Illuminate\Validation\ValidationException;
+use Socialite;
 
+// use App\Http\Controllers\User;
 
 class LoginController extends Controller
 {
@@ -25,6 +25,16 @@ class LoginController extends Controller
      */
 
     use AuthenticatesUsers;
+
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('guest')->except('logout');
+    }
 
     /**
      * Where to redirect users after login.
@@ -96,13 +106,30 @@ class LoginController extends Controller
     }
 
     /**
-     * Create a new controller instance.
+     * Handle Social login request
      *
-     * @return void
+     * @return response
      */
-    public function __construct()
+    public function socialLogin($social)
     {
-        $this->middleware('guest')->except('logout');
+        return Socialite::driver($social)->redirect();
+    }
+
+    /**
+     * Obtain the user information from Social Logged in.
+     * @param $social
+     * @return Response
+     */
+    public function handleProviderCallback($social)
+    {
+        $userSocial = Socialite::driver($social)->user();
+        $user = User::where(['email' => $userSocial->getEmail()])->first();
+        if ($user) {
+            Auth::login($user);
+            return redirect()->action('HomeController@index');
+        } else {
+            return view('auth.register', ['name' => $userSocial->getName(), 'email' => $userSocial->getEmail()]);
+        }
     }
 
     /*----------------------- Logout -------------

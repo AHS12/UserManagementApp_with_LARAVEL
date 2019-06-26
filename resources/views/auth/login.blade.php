@@ -88,17 +88,17 @@
                             </div>
                         </div>
                     </form>
-                    <div class="col-sm-4 social-buttons">
-                        <h3>Social Login</h3>
-                        <a class="btn btn-block btn-social btn-facebook">
-                            <i class="fa fa-facebook"></i> Sign in with Facebook
-                        </a>
-                        <a class="btn btn-block btn-social btn-github">
-                            <i class="fa fa-github"></i> Sign in with GitHub
-                        </a>
-                        <a class="btn btn-block btn-social btn-google-plus">
-                            <i class="fa fa-google-plus"></i> Sign in with Google
-                        </a>
+
+                    <div class="form-group row">
+                        <label for="name"  class="col-md-4 col-form-label text-md-right">Login With</label>
+                        <div class="col-md-6">
+                            <a href="{{ url('login/facebook') }}" class="btn btn-social-icon btn-facebook"><i class="fa fa-facebook"></i></a>
+                            {{-- <a href="{{ url('login/twitter') }}" class="btn btn-social-icon btn-twitter"><i class="fa fa-twitter"></i></a> --}}
+                            <a href="{{ url('login/google') }}" class="btn btn-social-icon btn-google-plus"><i class="fa fa-google-plus"></i></a>
+                            {{-- <a href="{{ url('login/linkedin') }}" class="btn btn-social-icon btn-linkedin"><i class="fa fa-linkedin"></i></a>
+                            <a href="{{ url('login/github') }}" class="btn btn-social-icon btn-github"><i class="fa fa-github"></i></a>
+                            <a href="{{ url('login/bitbucket') }}" class="btn btn-social-icon btn-bitbucket"><i class="fa fa-bitbucket"></i></a> --}}
+                        </div>
                     </div>
 
                 </div>

@@ -10,6 +10,7 @@ This Laravel Project Contains some medium level laravel functionality.
 - custom error message during registration
 - custom and proper login error message during login
 - Modified Login controller with lo of overritten functions
+- Social Login System Added
 
 
 ## Role Management
@@ -41,7 +42,7 @@ This Laravel Project Contains some medium level laravel functionality.
 
 ## Flash Message
 
--Showing Sitewise Different Flash Message
+- Showing Sitewise Different Flash Message
 
 
 ## CRUD
@@ -61,5 +62,7 @@ This Laravel Project Contains some medium level laravel functionality.
 
 - [Laravel](https://laravel.com/)
 
-- [Laravel Telescope](https://laravel.com/docs/5.8/telescope)
+- [Laravel Telescope](https://github.com/laravel/telescope)
+
+- [Laravel Socialite](https://github.com/laravel/socialite)
 
