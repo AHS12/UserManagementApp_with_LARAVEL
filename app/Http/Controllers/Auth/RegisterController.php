@@ -59,7 +59,7 @@ class RegisterController extends Controller
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'birthDate' => ['required', 'date'],
-           
+
         ]);
     }
 
@@ -115,9 +115,11 @@ class RegisterController extends Controller
         //responsible for auto login after register
         // $this->guard()->login($user);
 
+        //settingup default user role
         $user->roles()->attach(2);
 
         $request->session()->flash('message', 'Registration Successful');
+        //sending mail
         dispatch( new UserCreatedMailJob($user));
 
         return $this->registered($request, $user)

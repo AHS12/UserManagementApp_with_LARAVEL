@@ -44,16 +44,22 @@ return [
         ],
     ],
 
-    'facebook' => [
-        'client_id' => '2443880032509564', //Facebook API
-        'client_secret' => '55b9204a69957a43c09ff6dcccfbe646', //Facebook Secret
-        'redirect' => 'http://127.0.0.1:8000/login/facebook/callback',
-    ],
+    // 'facebook' => [
+    //     'client_id' => '2443880032509564', //Facebook API
+    //     'client_secret' => '55b9204a69957a43c09ff6dcccfbe646', //Facebook Secret
+    //     'redirect' => 'http://127.0.0.1:8000/login/facebook/callback',
+    // ],
 
     'google' => [
-        'client_id' => '428858013609-7vku071kubll81vhr99ggdutds4t0h7l.apps.googleusercontent.com',
-        'client_secret' => 'MCR8jCg9H7IaJOaENthD9Tbh',
-        'redirect' => 'http://127.0.0.1:8000/login/google/callback',
+        'client_id' => env('GOOGLE_CLIENT_ID'),
+        'client_secret' => env('GOOGLE_CLINET_SECRET'),
+        'redirect' => env('GOOGLE_CALLBACK_URL'),
+    ],
+
+    'github' => [
+        'client_id' => env('GITHUB_CLIENT_ID'),
+        'client_secret' => env('GITHUB_CLINET_SECRET'),
+        'redirect' => env('GITHUB_CALLBACK_URL'),
     ],
 
 ];

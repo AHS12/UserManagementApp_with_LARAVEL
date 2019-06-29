@@ -48,10 +48,16 @@ class EmailController extends Controller
         //
         $validatedEmail = $this->vaildateEmail();
         $validatedEmail['admin_id'] = auth()->user()->id;
-        $email=Email::create($validatedEmail);
+        try {
+            //code...
+            $email=Email::create($validatedEmail);
         dispatch(new AdminNotificationJob($email));
-
         flashMsg('Mail Sent!');
+        } catch (\Throwable $th) {
+            //throw $th;
+            flashMsg('Something went wrong!');
+        }
+
         return redirect()->back();
 
     }
