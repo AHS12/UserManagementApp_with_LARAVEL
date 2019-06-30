@@ -44,12 +44,6 @@ return [
         ],
     ],
 
-    // 'facebook' => [
-    //     'client_id' => '2443880032509564', //Facebook API
-    //     'client_secret' => '55b9204a69957a43c09ff6dcccfbe646', //Facebook Secret
-    //     'redirect' => 'http://127.0.0.1:8000/login/facebook/callback',
-    // ],
-
     'google' => [
         'client_id' => env('GOOGLE_CLIENT_ID'),
         'client_secret' => env('GOOGLE_CLINET_SECRET'),

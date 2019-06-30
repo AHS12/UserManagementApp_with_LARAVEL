@@ -11,6 +11,13 @@ This Laravel Project Contains some medium level laravel functionality.
 - custom and proper login error message during login
 - Modified Login controller with lo of overritten functions
 - Social Login System Added
+- Login and Register with Api support
+
+
+## API Support
+
+- Login And Register via Api using Laravel Passport
+- Basic API system for User
 
 
 ## Role Management
@@ -45,11 +52,6 @@ This Laravel Project Contains some medium level laravel functionality.
 - Showing Sitewise Different Flash Message
 
 
-## CRUD
-
-- A lot of CRUD using Route Model Binding
-
-
 ## Freamworks and Tools
 
 - [Boostrap4](https://getbootstrap.com/)
@@ -65,4 +67,6 @@ This Laravel Project Contains some medium level laravel functionality.
 - [Laravel Telescope](https://github.com/laravel/telescope)
 
 - [Laravel Socialite](https://github.com/laravel/socialite)
+
+- [Laravel Passport](https://github.com/laravel/passport)
 
