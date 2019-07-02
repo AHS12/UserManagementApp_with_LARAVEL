@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers\Api;
-use App\User;
-use Carbon\Carbon;
-use Illuminate\Http\Request;
+
 use App\Http\Controllers\Controller;
+use App\Http\Resources\UserResource;
+use App\User;
+use Illuminate\Http\Request;
 
 class ApiUserController extends Controller
 {
@@ -16,8 +17,8 @@ class ApiUserController extends Controller
     public function index()
     {
         //
-        $users = User::all();
-        return response()->json($users,200);
+        $users = UserResource::collection(User::all());
+        return response()->json($users, 200);
     }
 
     /**
@@ -39,7 +40,16 @@ class ApiUserController extends Controller
      */
     public function show($id)
     {
-        //
+        // Using Resource to show a optimized View
+        $user = new UserResource(User::findOrFail($id));
+        // $user=User::with('roles')->findOrFail($id);
+        // $user = User::findOrFail($id)->with('roles');
+        // $roles = $user->roles()->get();
+        // // dd($roles);
+        // foreach ($roles as $role) {
+        //     $userRole = $role->name;
+        // }
+        return response()->json($user, 200);
     }
 
     /**

@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Http\Resources\UserResource;
+use App\Jobs\UserCreatedMailJob;
 use App\User;
 use Carbon\Carbon;
-use App\Jobs\UserCreatedMailJob;
+use Illuminate\Http\Request;
 
 class PassportController extends Controller
 {
@@ -24,8 +25,7 @@ class PassportController extends Controller
             'birthDate' => 'required|date',
         ]);
 
-
-       // $request = request();
+        // $request = request();
         $image = $request->file('image');
         $extension = $image->getClientOriginalExtension();
         $processedImg = time() . rand() . '.' . $extension;
@@ -40,7 +40,7 @@ class PassportController extends Controller
         ]);
 
         $user->roles()->attach(2);
-        dispatch( new UserCreatedMailJob($user));
+        dispatch(new UserCreatedMailJob($user));
 
         $token = $user->createToken('myToken')->accessToken;
 
@@ -75,6 +75,7 @@ class PassportController extends Controller
      */
     public function details()
     {
-        return response()->json([auth()->user()], 200);
+        $authUser = new UserResource(auth()->user());
+        return response()->json($authUser, 200);
     }
 }
