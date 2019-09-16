@@ -213,10 +213,12 @@
                             class="fa fa-twitter"></i></a> --}}
                         <a href="{{ url('login/google') }}" class="btn btn-social-icon btn-google-plus"><i
                                 class="fa fa-google-plus"></i></a>
-                        {{-- <a href="{{ url('login/linkedin') }}" class="btn btn-social-icon btn-linkedin"><i
-                            class="fa fa-linkedin"></i></a>
+
                         <a href="{{ url('login/github') }}" class="btn btn-social-icon btn-github"><i
                                 class="fa fa-github"></i></a>
+                        {{-- <a href="{{ url('login/linkedin') }}" class="btn btn-social-icon btn-linkedin"><i
+                            class="fa fa-linkedin"></i></a>
+
                         <a href="{{ url('login/bitbucket') }}" class="btn btn-social-icon btn-bitbucket"><i
                                 class="fa fa-bitbucket"></i></a> --}}
                     </div>
